@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+	.st0{fill: white;}
+	.st1{fill:#111027;}
+	.st2{fill:none;stroke:#2D2D2D;stroke-miterlimit:10;}
+	.st3{fill:#0D0D0D;}
+	.st4{fill:#2D2D2D;}
+
+        #logo{
+            width: 200px;
+        }
+        #logo polygon:nth-child(1){
+            stroke-dasharray: 300px;
+            animation: changecolor 5s ease forwards .20s;
+        }
+        #logo polygon:nth-child(2){
+            stroke-dasharray: 300px;
+            animation: changecolor 5s ease forwards .30s;
+        }
+        #logo polygon:nth-child(3){
+            stroke-dasharray: 300px;
+            animation: changecolor 5s ease forwards .40s;
+            
+        }
+        #logo polygon:nth-child(4){
+            stroke-dasharray: 300px;
+            animation: changecolor 1s ease forwards .10s;    
+        }
+
+        @keyframes changecolor{
+            from{
+                transform: translate(200px);
+            }
+            to{
+                fill: #D62F43;
+                transform: translate(0px);  
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <svg id="logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 288 288" style="enable-background:new 0 0 288 288;" xml:space="preserve">
+
+<polygon class="st0" points="239.64,0 219.66,71.46 287,53.22 287,0 "/>
+<polygon class="st0" points="49.35,0 0.69,0 0.69,48.59 68.03,66.82 "/>
+<polygon class="st0" points="0.69,286.31 53.91,286.31 72.15,218.97 0.69,238.95 "/>
+<polygon class="st0" points="192.65,0 96.26,0 130.13,128.97 0.69,95.42 0.69,191.96 134.3,156.87 100.75,286.31 287,286.31 
+	287,100.06 157.56,133.61 "/>
+</svg>
+    
+</body>
+</html>
