@@ -1,8 +1,7 @@
 import React from 'react';
 
-const Header = () => {
+const Navbar = () => {
     return (
-        <header>
         <nav className="navbar navbar-expand-md navbar-dark fixed-top" id="change">
           <a className="navbar-brand" href="#">Carousel</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,8 +24,7 @@ const Header = () => {
             </form>
           </div>
         </nav>
-      </header>
     )
 };
 
-export default Header;
+export default Navbar;

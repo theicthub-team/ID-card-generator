@@ -16,9 +16,9 @@ const Sidebar = () => {
               <Sideitem name="Reports" active={false} href="#" dataFeather="bar-chart-2" />
               <Sideitem name="Integrations" active={false} href="#" dataFeather="layers" />
             </ul>
-            <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+            <h6 className="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
               <span>Saved reports</span>
-              <a class="d-flex align-items-center text-muted" href="#">
+              <a className="d-flex align-items-center text-muted" href="#">
                 <span data-feather="plus-circle"></span>
               </a>
             </h6>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Sideitem = (active, href, datafeather, name) => {
+const Sideitem = ({ name, active, href, datafeather }) => {
   if (active) {
     return (
       <li className="nav-item">

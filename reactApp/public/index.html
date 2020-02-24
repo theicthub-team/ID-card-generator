@@ -55,3 +55,13 @@
   integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 </html>
+<script>
+  var controller = new ScrollMagic.Controller();
+  var scene = new ScrollMagic.Scene({// the scene should last for a scroll distance of 100px
+    offset: 50
+  })
+    .setClassToggle("#change", "navbar-change")
+    // .addIndicators({name: "1 - add a class"}) // add indicators (requires plugin)
+    .addTo(controller);
+  
+</script>
