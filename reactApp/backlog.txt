@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=tOK9l5uP06U
+
+https://react-bootstrap.github.io/getting-started/introduction/
+https://www.npmjs.com/package/react-router-dom
+
+https://www.npmjs.com/package/reactstrap
+
+https://mdbootstrap.com/docs/react/content/images/
