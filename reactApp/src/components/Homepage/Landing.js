@@ -1,5 +1,5 @@
 import React from "react";
-import images from "./Image";
+import images from "./../Image";
 import "./Landing.css";
 
 const Landing = () => {
