@@ -21,12 +21,22 @@ export default class Login extends Component {
         username: this.state.username,
         password: this.state.password
       })
+
       .then(result => {
         // if (result.data.token) {
         //   this.setState({ token: result.data.token });
         // }
         console.log(result);
-      });
+          let responseObj = JSON.parse(JSON.stringify(result));
+          console.log(result.data.token);
+          alert(result.data.token);
+      })
+      .catch((error) => {
+              console.log(error.response);
+              let errObj = JSON.parse(JSON.stringify(error.response));
+              console.log(errObj.data.detail);
+              alert(errObj.data.detail);
+       });
   };
 
   render() {
