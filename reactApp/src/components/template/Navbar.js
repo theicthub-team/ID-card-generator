@@ -11,10 +11,10 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
-                <Link className="nav-link" to="/">Home</Link>
+                <Link className="nav-link" to="/login">Log in</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/">Link</Link>
+                <Link className="nav-link" to="/signup">Sign up</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/" tabIndex={-1} aria-disabled="true">Disabled</Link>
