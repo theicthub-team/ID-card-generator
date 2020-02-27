@@ -1,4 +1,3 @@
-import React from "react";
 import map from "./../assets/images/Global community.png";
 import group101 from "./../assets/images/Group 101.png";
 import group110 from "./../assets/images/Group 110.png";

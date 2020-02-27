@@ -1,0 +1,10 @@
+.img {
+    background: url("./../../assets/show.jpg");
+    height: 100vh;
+    background-size: cover;
+}
+
+.text {
+    padding-left: 10%;
+    padding-right: 10%;
+}

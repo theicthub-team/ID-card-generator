@@ -1,6 +1,7 @@
 import React from "react";
 import images from "./../Image";
 import "./Landing.css";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
@@ -87,9 +88,9 @@ const Landing = () => {
             className="text-center"
             style={{ width: "100%", marginTop: "2rem" }}
           >
-            <a className="btn btn-secondary" href="#" role="button">
+            <Link className="btn btn-secondary" to="/" role="button">
               View details »
-            </a>
+            </Link>
           </p>
         </div>
         <img
