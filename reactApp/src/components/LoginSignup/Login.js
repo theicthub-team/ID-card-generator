@@ -3,7 +3,8 @@ import LoginContent from "./LoginContent";
 import Navbar from "./../template/Navbar";
 import idgenerator from "../../api/idgenerator";
 
-export class Login extends Component {
+class Login extends Component {
+
   onLogin = ({ username, password }) => {
     idgenerator
       .post("user/login", {
@@ -12,12 +13,12 @@ export class Login extends Component {
       })
 
       .then(result => {
-        console.log(result);
+        this.props.changeAPIkey(result.data.token);
       })
       .catch(error => {
         console.clear();
-        this.setState({ err: error.response.statusText });
-        console.log(error.response);
+        this.setState({ err: error.response.data });
+        console.log(this.state.err);
       });
   };
 

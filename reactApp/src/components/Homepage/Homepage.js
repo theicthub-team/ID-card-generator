@@ -1,14 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import Landing from "./Landing";
 import Navbar from "./../template/Navbar";
 
-const Homepage = () => {
-  return (
-    <div>
-      <Navbar />
-      <Landing />
-    </div>
-  );
-};
+export default class Homepage extends Component {
+  componentDidMount() {
+    console.log(this.props.apikey);
+  }
 
-export default Homepage;
+  render() {
+    return (
+      <div>
+        <Navbar />
+        <Landing />
+      </div>
+    );
+  }
+}

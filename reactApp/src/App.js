@@ -6,14 +6,42 @@ import Signup from "./components/LoginSignup/Signup";
 import { BrowserRouter, Route } from "react-router-dom";
 
 export default class App extends Component {
+  state = { apikey: "" };
+
+  changeAPIkey = apikey => {
+    this.setState({ apikey });
+  };
+
   render() {
     return (
       <div>
         <BrowserRouter>
-          <Route path="/" exact component={Homepage} />
-          <Route path="/mainpage" exact component={Mainpage} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/signup" exact component={Signup} />
+          <Route
+            path="/"
+            exact
+            render={props => <Homepage {...props} apikey={this.state.apikey} />}
+          />
+          <Route
+            path="/mainpage"
+            exact
+            render={props => <Mainpage {...props} apikey={this.state.apikey} />}
+          />
+          <Route
+            path="/login"
+            exact
+            render={props => (
+              <Login
+                {...props}
+                changeAPIkey={this.changeAPIkey}
+                apikey={this.state.apikey}
+              />
+            )}
+          />
+          <Route
+            path="/signup"
+            exact
+            render={props => <Signup {...props} apikey={this.state.apikey} />}
+          />
         </BrowserRouter>
       </div>
     );
