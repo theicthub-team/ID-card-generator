@@ -1,15 +1,20 @@
 import React, { Component } from "react";
 import Homepage from "./components/Homepage/Homepage";
 import Mainpage from "./components/Main/Mainpage";
+import CreateEvent from "./components/CreateEvent/CreateEvent";
 import Login from "./components/LoginSignup/Login";
 import Signup from "./components/LoginSignup/Signup";
 import { BrowserRouter, Route } from "react-router-dom";
 
 export default class App extends Component {
-  state = { apikey: "" };
+  state = { isLoggedIn: false, apikey: "" };
 
   changeAPIkey = apikey => {
     this.setState({ apikey });
+  };
+
+  enableLogin = () => {
+    this.setState({ isLoggedIn: true });
   };
 
   render() {
@@ -24,7 +29,24 @@ export default class App extends Component {
           <Route
             path="/mainpage"
             exact
-            render={props => <Mainpage {...props} apikey={this.state.apikey} />}
+            render={props => (
+              <Mainpage
+                isLoggedIn={this.state.isLoggedIn}
+                {...props}
+                apikey={this.state.apikey}
+              />
+            )}
+          />
+          <Route
+            path="/create"
+            exact
+            render={props => (
+              <CreateEvent
+                isLoggedIn={this.state.isLoggedIn}
+                {...props}
+                apikey={this.state.apikey}
+              />
+            )}
           />
           <Route
             path="/login"
@@ -32,8 +54,10 @@ export default class App extends Component {
             render={props => (
               <Login
                 {...props}
+                isLoggedIn={this.state.isLoggedIn}
                 changeAPIkey={this.changeAPIkey}
                 apikey={this.state.apikey}
+                enableLogin={this.enableLogin}
               />
             )}
           />

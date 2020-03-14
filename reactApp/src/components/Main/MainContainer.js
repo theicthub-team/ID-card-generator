@@ -1,5 +1,6 @@
 import React from "react";
 import "./MainContainer.css";
+import { Link } from "react-router-dom";
 
 const MainContainer = () => {
   return (
@@ -101,9 +102,9 @@ const MainContainer = () => {
             ultricies vehicula ut id elit.
           </p>
           <p>
-            <a className="btn btn-lg btn-transparent" href="#" role="button">
-              Browse gallery
-            </a>
+            <Link to="/create" className="btn btn-lg btn-transparent" href="#" role="button">
+              Add Event
+            </Link>
           </p>
         </div>
       </div>

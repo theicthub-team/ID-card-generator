@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import LoginContent from "./LoginContent";
+import { Redirect } from "react-router-dom";
 import Navbar from "./../template/Navbar";
 import idgenerator from "../../api/idgenerator";
 
 class Login extends Component {
-
   onLogin = ({ username, password }) => {
     idgenerator
       .post("user/login", {
@@ -14,6 +14,7 @@ class Login extends Component {
 
       .then(result => {
         this.props.changeAPIkey(result.data.token);
+        this.props.enableLogin();
       })
       .catch(error => {
         console.clear();
@@ -23,6 +24,10 @@ class Login extends Component {
   };
 
   render() {
+    if (this.props.isLoggedIn) {
+      return <Redirect to="/mainpage" />;
+    }
+
     return (
       <div>
         <Navbar />

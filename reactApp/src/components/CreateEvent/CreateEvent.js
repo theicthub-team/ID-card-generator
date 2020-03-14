@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-import MainContainer from "./../Main/MainContainer";
+import CreateEventContainer from "./../CreateEvent/CreateEventContainer";
 import Sidebar from "./../template/Sidebar/Sidebar";
 import { Redirect } from "react-router-dom";
 
-class Mainpage extends Component {
+class CreateEvent extends Component {
   render() {
     return (
       <div>
         <Sidebar />
-        <MainContainer />
+        <CreateEventContainer />
       </div>
     );
     if (this.props.isLoggedIn) {
       return (
         <div>
           <Sidebar />
-          <MainContainer />
+          <CreateEventContainer />
         </div>
       );
     } else {
@@ -24,4 +24,4 @@ class Mainpage extends Component {
   }
 }
 
-export default Mainpage;
+export default CreateEvent;
