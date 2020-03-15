@@ -5,12 +5,12 @@ import { Redirect } from "react-router-dom";
 
 class CreateEvent extends Component {
   render() {
-    return (
-      <div>
-        <Sidebar />
-        <CreateEventContainer />
-      </div>
-    );
+    // return (
+    //   <div>
+    //     <Sidebar />
+    //     <CreateEventContainer />
+    //   </div>
+    // );
     if (this.props.isLoggedIn) {
       return (
         <div>
