@@ -17,7 +17,7 @@ class Login extends Component {
         this.props.enableLogin();
       })
       .catch(error => {
-        console.clear();
+        // console.clear();
         this.setState({ err: error.response.data });
         console.log(this.state.err);
       });
