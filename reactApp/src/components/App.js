@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import Homepage from "./components/Homepage/Homepage";
-import Mainpage from "./components/Main/Mainpage";
-import CreateEvent from "./components/CreateEvent/CreateEvent";
-import Login from "./components/LoginSignup/Login";
-import Signup from "./components/LoginSignup/Signup";
+import Homepage from "./Homepage/Homepage";
+import Mainpage from "./Main/Mainpage";
+import CreateEvent from "./CreateEvent/CreateEvent";
+import Login from "./LoginSignup/Login";
+import Signup from "./LoginSignup/Signup";
 import { BrowserRouter, Route } from "react-router-dom";
 
 export default class App extends Component {
