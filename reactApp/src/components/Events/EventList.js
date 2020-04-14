@@ -1,11 +1,13 @@
 import React from "react";
 import EventItem from "./EventItem";
 
-const EventList = ({ events, onEventSelect }) => {
+const events = [1]; // Dummy
+
+const EventList = () => {
   const renderedEvents = events.map(event => {
     return (
-      <div key={event.id} className="ui relaxed divided list">
-        <EventItem event={event} onEventSelect={onEventSelect} />
+      <div className="ui relaxed divided list">
+        <EventItem />
       </div>
     );
   });

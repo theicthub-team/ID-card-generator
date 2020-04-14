@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const EventItem = ({ event, onEventSelect }) => {
+const EventItem = () => {
   return (
-    <div onClick={() => onEventSelect(event)}>
-      <Link to='/'>{event.event_name}</Link>
+    <div>
+      <Link to='/'>Dummy</Link>
     </div>
   );
 };

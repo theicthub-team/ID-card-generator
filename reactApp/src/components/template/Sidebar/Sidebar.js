@@ -11,10 +11,7 @@ export default class Sidebar extends Component {
           <nav className="col-md-3 d-none d-md-block bg-light sidebar">
             <div className="sidebar-sticky">
               <ul className="nav flex-column">
-                <EventList
-                  events={this.props.events}
-                  onEventSelect={this.props.onEventSelect}
-                />
+                <EventList />
               </ul>
             </div>
           </nav>
