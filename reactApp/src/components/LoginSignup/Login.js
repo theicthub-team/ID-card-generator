@@ -1,40 +1,23 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import Navbar from "../template/Navbar";
 import LoginContent from "./LoginContent";
-import { Redirect } from "react-router-dom";
-import Navbar from "./../template/Navbar";
-import idgenerator from "../../api/idgenerator";
+import { signIn } from "../../actions";
 
 class Login extends Component {
-  onLogin = ({ username, password }) => {
-    idgenerator
-      .post("user/login", {
-        username,
-        password
-      })
-
-      .then(result => {
-        this.props.changeAPIkey(result.data.token);
-        this.props.enableLogin();
-      })
-      .catch(error => {
-        // console.clear();
-        this.setState({ err: error.response.data });
-        console.log(this.state.err);
-      });
+  onSubmit = (formValues) => {
+    this.props.signIn(formValues);
   };
 
   render() {
-    if (this.props.isLoggedIn) {
-      return <Redirect to="/mainpage" />;
-    }
-
     return (
       <div>
         <Navbar />
-        <LoginContent onLogin={this.onLogin} />
+        <LoginContent onSubmit={this.onSubmit} />
       </div>
     );
   }
 }
 
-export default Login;
+export default connect(null, { signIn })(Login);

@@ -4,15 +4,15 @@ import EventItem from "./EventItem";
 const events = [1]; // Dummy
 
 const EventList = () => {
-  const renderedEvents = events.map(event => {
+  const renderedEvents = events.map((event) => {
     return (
-      <div className="ui relaxed divided list">
+      <div key={event} className="ui relaxed divided list">
         <EventItem />
       </div>
     );
   });
 
-  return renderedEvents;
+  return <ul className="nav flex-column">{renderedEvents}</ul>;
 };
 
 export default EventList;
