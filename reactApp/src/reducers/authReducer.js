@@ -1,4 +1,10 @@
-import { SIGN_IN_SUCCESS, SIGN_IN_FAIL, SIGN_OUT } from "./../actions/types";
+import {
+  SIGN_UP_SUCCESS,
+  SIGN_UP_FAIL,
+  SIGN_IN_SUCCESS,
+  SIGN_IN_FAIL,
+  SIGN_OUT,
+} from "./../actions/types";
 
 const INITIAL_STATE = {
   isSignedIn: false,
@@ -21,10 +27,14 @@ export default (state = INITIAL_STATE, action) => {
         error: action.payload.detail,
       };
 
-    // --------------------------------------------------------------
-
     case SIGN_OUT:
       return { ...state, isSignedIn: false, token: null };
+
+    case SIGN_UP_SUCCESS:
+      return { ...state, message: action.payload.Success };
+
+    case SIGN_UP_FAIL:
+      return { ...state, error: action.payload };
 
     default:
       return state;

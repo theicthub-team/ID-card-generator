@@ -10,7 +10,7 @@ export class LoginContent extends Component {
     if (this.props.errorMessage) {
       return (
         <div className="alert alert-danger" role="alert">
-          {this.props.errorMessage}
+          {this.props.errorMessage || 'Something went wrong! Please try again later.'}
         </div>
       );
     }
@@ -51,7 +51,7 @@ export class LoginContent extends Component {
               <Field
                 name="username"
                 type="text"
-                placeholder="Your Email *"
+                placeholder="Your Username *"
                 component={this.renderTextInput}
               />
               <Field
