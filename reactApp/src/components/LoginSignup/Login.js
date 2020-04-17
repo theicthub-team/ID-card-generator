@@ -1,34 +1,23 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
+
+import Navbar from "../template/Navbar";
 import LoginContent from "./LoginContent";
-import Navbar from "./../template/Navbar";
-import idgenerator from "../../api/idgenerator";
+import { signIn } from "../../actions";
 
-export class Login extends Component {
-  onLogin = ({ username, password }) => {
-    idgenerator
-      .post("user/login", {
-        username,
-        password
-      })
-
-      .then(result => {
-        console.log(result);
-      })
-      .catch(error => {
-        console.clear();
-        this.setState({ err: error.response.statusText });
-        console.log(error.response);
-      });
+class Login extends Component {
+  onSubmit = (formValues) => {
+    this.props.signIn(formValues);
   };
 
   render() {
     return (
       <div>
         <Navbar />
-        <LoginContent onLogin={this.onLogin} />
+        <LoginContent onSubmit={this.onSubmit} />
       </div>
     );
   }
 }
 
-export default Login;
+export default connect(null, { signIn })(Login);
