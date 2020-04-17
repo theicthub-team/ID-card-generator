@@ -43,6 +43,16 @@ class SignupContent extends Component {
     }
   }
 
+  renderSuccessMsg() {
+    if (this.props.successMessage) {
+      return (
+        <div className="alert alert-success" role="alert">
+          {this.props.successMessage}
+        </div>
+      );
+    }
+  }
+
   render() {
     return (
       <main role="main">
@@ -86,7 +96,8 @@ class SignupContent extends Component {
                 placeholder="Password *"
                 component={this.renderTextInput}
               />
-              <div>{this.renderServerError()}</div>
+              {this.renderServerError()}
+              {this.renderSuccessMsg()}
               <div className="form-group">
                 <button className="btn btn-light rounded-pill border border-primary text-primary px-4">
                   Register
@@ -136,6 +147,7 @@ const mapStateToProps = (state) => {
       password: "",
       ...state.auth.error,
     },
+    successMessage: state.auth.message,
   };
 };
 
