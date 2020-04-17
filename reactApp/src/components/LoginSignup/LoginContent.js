@@ -1,9 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+
 import { Field, reduxForm } from "redux-form";
 import "./LoginSignup.css";
 
 export class LoginContent extends Component {
+  renderErrorMsg() {
+    if (this.props.errorMessage) {
+      return (
+        <div className="alert alert-danger" role="alert">
+          {this.props.errorMessage}
+        </div>
+      );
+    }
+  }
+
   renderTextInput = (formProps) => {
     return (
       <div className="form-group">
@@ -48,6 +60,7 @@ export class LoginContent extends Component {
                 placeholder="Your Password *"
                 component={this.renderTextInput}
               />
+              {this.renderErrorMsg()}
               <div className="form-group">
                 <button className="btn btn-primary rounded-pill px-4">
                   Log In
@@ -77,6 +90,14 @@ export class LoginContent extends Component {
   }
 }
 
-export default reduxForm({
-  form: "Login",
-})(LoginContent);
+const mapStateToProps = (state) => {
+  return {
+    errorMessage: state.auth.error,
+  };
+};
+
+export default connect(mapStateToProps)(
+  reduxForm({
+    form: "Login",
+  })(LoginContent)
+);
