@@ -10,10 +10,25 @@ export class LoginContent extends Component {
     if (this.props.errorMessage) {
       return (
         <div className="alert alert-danger" role="alert">
-          {this.props.errorMessage || 'Something went wrong! Please try again later.'}
+          {this.props.errorMessage ||
+            "Something went wrong! Please try again later."}
         </div>
       );
     }
+  }
+
+  renderLoginButton() {
+    if (this.props.loading) {
+      return (
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      );
+    }
+
+    return (
+      <button className="btn btn-primary rounded-pill px-4">Log In</button>
+    );
   }
 
   renderTextInput = (formProps) => {
@@ -61,11 +76,7 @@ export class LoginContent extends Component {
                 component={this.renderTextInput}
               />
               {this.renderErrorMsg()}
-              <div className="form-group">
-                <button className="btn btn-primary rounded-pill px-4">
-                  Log In
-                </button>
-              </div>
+              <div className="form-group">{this.renderLoginButton()}</div>
             </form>
 
             <p className="text-muted">or</p>
@@ -93,6 +104,7 @@ export class LoginContent extends Component {
 const mapStateToProps = (state) => {
   return {
     errorMessage: state.auth.error,
+    loading: state.auth.loading,
   };
 };
 

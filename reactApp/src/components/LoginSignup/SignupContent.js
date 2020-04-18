@@ -25,6 +25,22 @@ class SignupContent extends Component {
       return <p style={{ color: "red" }}>{meta.error}</p>;
   }
 
+  renderSignUpButton() {
+    if (this.props.loading) {
+      return (
+        <div class="spinner-border" role="status">
+          <span class="sr-only"></span>
+        </div>
+      );
+    }
+
+    return (
+      <button className="btn btn-light rounded-pill border border-primary text-primary px-4">
+        Register
+      </button>
+    );
+  }
+
   renderServerError() {
     if (this.props.errorMessage.username !== "") {
       return <p style={{ color: "red" }}>{this.props.errorMessage.username}</p>;
@@ -98,11 +114,7 @@ class SignupContent extends Component {
               />
               {this.renderServerError()}
               {this.renderSuccessMsg()}
-              <div className="form-group">
-                <button className="btn btn-light rounded-pill border border-primary text-primary px-4">
-                  Register
-                </button>
-              </div>
+              <div className="form-group">{this.renderSignUpButton()}</div>
             </form>
             <p className="text-muted">
               We're getting all product ready, we will email you as soon as we
@@ -148,6 +160,7 @@ const mapStateToProps = (state) => {
       ...state.auth.error,
     },
     successMessage: state.auth.message,
+    loading: state.auth.loading,
   };
 };
 
