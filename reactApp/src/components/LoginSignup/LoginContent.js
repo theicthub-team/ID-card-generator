@@ -20,8 +20,8 @@ export class LoginContent extends Component {
   renderLoginButton() {
     if (this.props.loading) {
       return (
-        <div class="spinner-border" role="status">
-          <span class="sr-only"></span>
+        <div className="spinner-border" role="status">
+          <span className="sr-only"></span>
         </div>
       );
     }
