@@ -1,5 +1,5 @@
 import React from "react";
-import images from "../image";
+import images from "../Image";
 import "./Landing.css";
 import { Link } from "react-router-dom";
 

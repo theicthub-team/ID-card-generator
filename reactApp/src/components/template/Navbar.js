@@ -19,6 +19,10 @@ const Navbar = () => {
               <li className="nav-item">
                 <Link className="nav-link" to="/" tabIndex={-1} aria-disabled="true">Disabled</Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/design">Design</Link>
+              </li>
+              
             </ul>
             <form className="form-inline mt-2 mt-md-0">
               <button className="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>

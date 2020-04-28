@@ -7,6 +7,7 @@ import CreateEvent from "./CreateEvent/CreateEvent";
 import Login from "./LoginSignup/Login";
 import Signup from "./LoginSignup/Signup";
 import history from "../history";
+import Design from "./Design/Design";
 
 export default class App extends Component {
   render() {
@@ -19,6 +20,7 @@ export default class App extends Component {
             <Route path="/create" component={CreateEvent} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
+            <Route path="/design" component={Design} />
           </Switch>
         </Router>
       </div>
