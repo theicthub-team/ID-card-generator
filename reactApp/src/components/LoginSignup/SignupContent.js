@@ -25,21 +25,50 @@ class SignupContent extends Component {
       return <p style={{ color: "red" }}>{meta.error}</p>;
   }
 
-  renderServerError() {
-    if (this.props.errorMessage.username !== "") {
-      return <p style={{ color: "red" }}>{this.props.errorMessage.username}</p>;
-    } else if (this.props.errorMessage.email !== "") {
-      return <p style={{ color: "red" }}>{this.props.errorMessage.email}</p>;
-    } else if (this.props.errorMessage.first_name !== "") {
+  renderSignUpButton() {
+    if (this.props.loading) {
       return (
-        <p style={{ color: "red" }}>{this.props.errorMessage.first_name}</p>
+        <div className="spinner-border" role="status">
+          <span className="sr-only"></span>
+        </div>
       );
-    } else if (this.props.errorMessage.last_name !== "") {
-      return (
-        <p style={{ color: "red" }}>{this.props.errorMessage.last_name}</p>
-      );
-    } else if (this.props.errorMessage.password !== "") {
-      return <p style={{ color: "red" }}>{this.props.errorMessage.password}</p>;
+    }
+
+    return (
+      <button className="btn btn-light rounded-pill border border-primary text-primary px-4">
+        Register
+      </button>
+    );
+  }
+
+  renderServerError(inputName) {
+    switch (inputName) {
+      case "username":
+        return (
+          <p style={{ color: "red" }}>{this.props.errorMessage.username}</p>
+        );
+      case "email":
+        return <p style={{ color: "red" }}>{this.props.errorMessage.email}</p>;
+      case "first_name":
+        return (
+          <p style={{ color: "red" }}>{this.props.errorMessage.first_name}</p>
+        );
+      case "last_name":
+        return (
+          <p style={{ color: "red" }}>{this.props.errorMessage.last_name}</p>
+        );
+      case "password":
+        return (
+          <p style={{ color: "red" }}>{this.props.errorMessage.password}</p>
+        );
+
+      case "message":
+        return (
+          <p style={{ color: "red" }}>{this.props.errorMessage.message}</p>
+        );
+
+      default:
+        break;
     }
   }
 
@@ -72,37 +101,40 @@ class SignupContent extends Component {
                 placeholder="Username *"
                 component={this.renderTextInput}
               />
+              {this.renderServerError("username")}
               <Field
                 name="email"
                 type="email"
                 placeholder="Email *"
                 component={this.renderTextInput}
               />
+              {this.renderServerError("email")}
               <Field
                 name="first_name"
                 type="text"
                 placeholder="First name *"
                 component={this.renderTextInput}
               />
+              {this.renderServerError("first_name")}
               <Field
                 name="last_name"
                 type="text"
                 placeholder="Last name *"
                 component={this.renderTextInput}
               />
+              {this.renderServerError("last_name")}
               <Field
                 name="password"
                 type="password"
                 placeholder="Password *"
                 component={this.renderTextInput}
               />
-              {this.renderServerError()}
+              {this.renderServerError("password")}
+
+              {this.renderServerError("message")}
+
               {this.renderSuccessMsg()}
-              <div className="form-group">
-                <button className="btn btn-light rounded-pill border border-primary text-primary px-4">
-                  Register
-                </button>
-              </div>
+              <div className="form-group">{this.renderSignUpButton()}</div>
             </form>
             <p className="text-muted">
               We're getting all product ready, we will email you as soon as we
@@ -145,9 +177,11 @@ const mapStateToProps = (state) => {
       first_name: "",
       last_name: "",
       password: "",
+      message: "",
       ...state.auth.error,
     },
     successMessage: state.auth.message,
+    loading: state.auth.loading,
   };
 };
 

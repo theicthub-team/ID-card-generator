@@ -4,11 +4,13 @@ import {
   SIGN_IN_SUCCESS,
   SIGN_IN_FAIL,
   SIGN_OUT,
+  LOADING,
 } from "./types";
 import idgenerator from "../api/idgenerator";
 import history from "../history";
 
 export const signIn = (logInformValues) => (dispatch) => {
+  dispatch({ type: LOADING });
   idgenerator
     .post("user/login", logInformValues)
     .then((response) => {
@@ -16,7 +18,15 @@ export const signIn = (logInformValues) => (dispatch) => {
       history.push("/mainpage");
     })
     .catch((err) => {
-      dispatch({ type: SIGN_IN_FAIL, payload: err.response.data });
+      let errorMsg = "";
+
+      try {
+        errorMsg = err.response.data.detail;
+      } catch (error) {
+        errorMsg = err.message;
+      }
+
+      dispatch({ type: SIGN_IN_FAIL, payload: errorMsg });
       console.clear();
     });
 };
@@ -28,13 +38,22 @@ export const signOut = (dispatch) => {
 };
 
 export const signUp = (signUpFormValues) => (dispatch) => {
+  dispatch({ type: LOADING });
   idgenerator
     .post("user/signup", signUpFormValues)
     .then((response) => {
       dispatch({ type: SIGN_UP_SUCCESS, payload: response.data });
     })
     .catch((err) => {
-      dispatch({ type: SIGN_UP_FAIL, payload: err.response.data });
+      let errorMsg = "";
+
+      try {
+        errorMsg = err.response.data;
+      } catch (error) {
+        errorMsg = { message: err.message };
+      }
+
+      dispatch({ type: SIGN_UP_FAIL, payload: errorMsg });
       console.clear();
     });
 };
