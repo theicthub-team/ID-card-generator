@@ -4,3 +4,4 @@ export const SIGN_UP_FAIL = 'SIGN_UP_FAIL';
 export const SIGN_IN_FAIL = 'SIGN_IN_FAIL';
 export const SIGN_OUT = 'SIGN_OUT';
 export const LOADING = 'LOADING';
+export const SELCTED_LAYER = 'SELCTED_LAYER';
