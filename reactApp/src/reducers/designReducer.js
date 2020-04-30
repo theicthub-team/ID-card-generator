@@ -7,7 +7,7 @@ import {
 } from "../actions/types";
 
 const INITIAL_STATE = {
-  selectedLayer: null,
+  selectedLayer: '1',
   layers: {
     "1": {
       top: 0,

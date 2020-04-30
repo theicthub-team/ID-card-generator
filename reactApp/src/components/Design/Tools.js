@@ -60,10 +60,11 @@ class Tools extends Component {
 }
 
 const mapStateToProps = (state) => {
+  let selected = state.design.layers[state.design.selectedLayer];
   return {
-    top: state.design.top,
-    left: state.design.left,
-    size: state.design.size,
+    top: selected.top,
+    left: selected.left,
+    size: selected.size,
   };
 };
 

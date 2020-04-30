@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 class Canvas extends React.Component {
   getLayers() {
     const layers = Object.values(this.props.layers);
-
     return layers.map((layer, i) => (
       <Layers name={i + 1} key={i} info={layer} />
     ));

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./design.css";
 import Tools from './Tools';
 import Canvas from './Canvas';
+import { connect } from "react-redux";
 
 class Mainpage extends Component {
   render() {
@@ -14,4 +15,8 @@ class Mainpage extends Component {
   }
 }
 
-export default Mainpage;
+const mapStateToPropes = (state) => {
+  return { layers: state.design.layers };
+};
+
+export default connect(mapStateToPropes, {})(Mainpage);
