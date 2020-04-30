@@ -28,6 +28,8 @@ const INITIAL_STATE = {
 };
 
 export default (state = INITIAL_STATE, action) => {
+  const layers = { ...state.layers };
+
   switch (action.type) {
     case SELECT_LAYER:
       return {
@@ -36,21 +38,17 @@ export default (state = INITIAL_STATE, action) => {
       };
 
     case UPDATE_TOP:
-      const layers = { ...state.layers };
-      _.set(layers, layers[state.selectedLayer].top, action.payload);
-      console.log(layers);
+      _.set(layers, `${state.selectedLayer}.top`, action.payload);
 
-      return { ...state, ...layers };
+      return { ...state, layers };
     case UPDATE_LEFT:
-      return {
-        ...state,
-        left: action.payload,
-      };
+      _.set(layers, `${state.selectedLayer}.left`, action.payload);
+
+      return { ...state, layers };
     case UPDATE_SIZE:
-      return {
-        ...state,
-        size: action.payload,
-      };
+      _.set(layers, `${state.selectedLayer}.size`, action.payload);
+
+      return { ...state, layers };
     default:
       return state;
   }

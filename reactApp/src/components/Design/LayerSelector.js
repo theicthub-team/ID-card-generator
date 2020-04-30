@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { selectLayer } from "../../actions/designAction";
+import { selectLayer } from "../../actions/";
 
 class LayerSelector extends React.Component {
   getStyle(number) {
