@@ -8,7 +8,9 @@ import {
   SELECT_LAYER,
   UPDATE_LEFT,
   UPDATE_SIZE,
-  UPDATE_TOP
+  UPDATE_TOP,
+  UPDATE_HEIGHT,
+  UPDATE_WIDTH
 } from "./types";
 import idgenerator from "../api/idgenerator";
 import history from "../history";
@@ -65,7 +67,6 @@ export const signUp = (signUpFormValues) => (dispatch) => {
 export const selectLayer = (layerName) => (dispatch) => {
   dispatch({type: SELECT_LAYER, payload: layerName});
 };
-
 export const updateTop = (top) => (dispatch) => {
   dispatch({type: UPDATE_TOP, payload: top});
 };
@@ -74,4 +75,10 @@ export const updateLeft = (left) => (dispatch) => {
 };
 export const updateSize = (size) => (dispatch) => {
   dispatch({type: UPDATE_SIZE, payload: size});
+};
+export const updateWidth = (size) => (dispatch) => {
+  dispatch({type: UPDATE_WIDTH, payload: size});
+};
+export const updateHeight = (size,layerid) => (dispatch) => {
+  dispatch({type: UPDATE_HEIGHT, payload: size});
 };

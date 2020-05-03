@@ -4,11 +4,21 @@ import {
   UPDATE_TOP,
   UPDATE_SIZE,
   UPDATE_LEFT,
+  UPDATE_HEIGHT,
+  UPDATE_WIDTH
 } from "../actions/types";
 
 const INITIAL_STATE = {
-  selectedLayer: '1',
+  selectedLayer: '0',
   layers: {
+    "0": {
+        width: 600,
+        height: 400,
+        margin: 40,
+        top: 0,
+        left: 0,
+        size: 0,
+    },
     "1": {
       top: 0,
       left: 0,
@@ -49,6 +59,14 @@ export default (state = INITIAL_STATE, action) => {
       _.set(layers, `${state.selectedLayer}.size`, action.payload);
 
       return { ...state, layers };
+    case UPDATE_HEIGHT:
+      _.set(layers, `${state.selectedLayer}.height`, action.payload);
+  
+      return { ...state, layers }
+    case UPDATE_WIDTH:
+      _.set(layers, `${state.selectedLayer}.width`, action.payload);
+  
+      return { ...state, layers }
     default:
       return state;
   }

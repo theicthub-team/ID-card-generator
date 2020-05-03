@@ -13,6 +13,12 @@ class LayerSelector extends React.Component {
     return (
       <div>
         <div
+          style={this.getStyle("0")}
+          onClick={() => this.props.selectLayer("0")}
+        >
+          Canvas
+        </div>
+        <div
           style={this.getStyle("1")}
           onClick={() => this.props.selectLayer("1")}
         >
