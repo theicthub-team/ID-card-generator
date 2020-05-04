@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import LayerSelector from "../LayerSelector";
+import LayerSelector from "../LayersSelectors/LayerSelector";
 import { connect } from "react-redux";
 import CanvasLayer from "./CanvasLayer";
 import DefaultLayer from "./DefaultLayer";
@@ -7,24 +7,21 @@ import DefaultLayer from "./DefaultLayer";
 class Tools extends Component {
   
   Controls = () => {
-    switch (this.props.layerid) {
-      case '0':
+    switch (this.props.type) {
+      case 'Canvas':
         return (
           <CanvasLayer />
         );
-      case '1':
+      case 'Image':
         return (
           <DefaultLayer />
-        );
-        case '2':
-          return (
-            <DefaultLayer />
-          );
-          case '3':
-            return (
-              <DefaultLayer />
-            );
+      );
+      case 'Text':
+        return (
+          <DefaultLayer />
+      );
       default:
+        console.log(this.props.type);
         return(
           <div>Select A layer</div>
         );
@@ -32,10 +29,6 @@ class Tools extends Component {
   }
 
   render() {
-    let Maxwidth = this.props.width-(this.props.size*2);
-    let Maxheight = this.props.height-(this.props.size*2);
-    console.log("W-"+Maxwidth);
-    console.log("h-"+Maxheight);
     return (
       <div className="container-fluid">
         <div className="row">
@@ -59,7 +52,7 @@ class Tools extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    layerid: state.design.selectedLayer,
+    type: state.design.layers[state.design.selectedLayer].type,
   };
 };
 

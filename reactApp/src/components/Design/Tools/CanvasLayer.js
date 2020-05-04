@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 
 class canvasLayer extends Component {  
   render() {
-    let Maxwidth = this.props.width-(this.props.size*2);
-    let Maxheight = this.props.height-(this.props.size*2);
     return (
             <div>
                 <h5>Size</h5>

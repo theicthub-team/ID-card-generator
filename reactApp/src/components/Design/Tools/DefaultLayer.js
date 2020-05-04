@@ -36,7 +36,7 @@ class DefaultLayer extends Component {
                   type="range" className="custom-range"
                   value={this.props.size}
                   min="0"
-                  max={Maxwidth}
+                  max={Maxwidth-10}
                   onChange={(e) => this.props.updateSize(e.target.value)}
                 ></input>
               </div>

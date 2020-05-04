@@ -12,7 +12,7 @@ class Layers extends React.Component {
           padding: `${this.props.info.size}px`,
         }}
       >
-        {`Layer ${this.props.name}`}
+        {`${this.props.info.name}`}
       </div>
     );
   }

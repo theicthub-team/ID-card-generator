@@ -1,5 +1,5 @@
 import React from "react";
-import Layers from "./Layers";
+import Layers from "./Scenes/Layers";
 import { connect } from "react-redux";
 
 class Canvas extends React.Component {
@@ -22,8 +22,9 @@ class Canvas extends React.Component {
         style={{
           width: `${width}px`,
           height: `${height}px`,
-          background: "red",
-          margin: `${margin}px`
+          backgroundImage: "url('https://legaldbol.com/wp-content/uploads/2019/03/72-Printable-Id-Card-Background-Template-Free-Formating-by-Id-Card-Background-Template-Free.jpg')",
+          backgroundSize: "cover",
+          margin: `${margin}px`,
         }}  
         >{this.getLayers()}
         </div>
