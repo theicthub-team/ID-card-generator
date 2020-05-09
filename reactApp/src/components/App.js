@@ -8,6 +8,7 @@ import Login from "./LoginSignup/Login";
 import Signup from "./LoginSignup/Signup";
 import history from "../history";
 import Design from "./Design/Design";
+import FileUpload from "./ImageBrowser/FileUpload";
 
 export default class App extends Component {
   render() {
@@ -21,6 +22,7 @@ export default class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/design" component={Design} />
+            <Route path="/upload" component={FileUpload} />
           </Switch>
         </Router>
       </div>

@@ -3,30 +3,22 @@ import LayerSelector from "../LayersSelectors/LayerSelector";
 import { connect } from "react-redux";
 import CanvasLayer from "./CanvasLayer";
 import DefaultLayer from "./DefaultLayer";
+import history from "./../../../history";
 
 class Tools extends Component {
-  
   Controls = () => {
     switch (this.props.type) {
-      case 'Canvas':
-        return (
-          <CanvasLayer />
-        );
-      case 'Image':
-        return (
-          <DefaultLayer />
-      );
-      case 'Text':
-        return (
-          <DefaultLayer />
-      );
+      case "Canvas":
+        return <CanvasLayer />;
+      case "Image":
+        return <DefaultLayer />;
+      case "Text":
+        return <DefaultLayer />;
       default:
         console.log(this.props.type);
-        return(
-          <div>Select A layer</div>
-        );
+        return <div>Select A layer</div>;
     }
-  }
+  };
 
   render() {
     return (
@@ -39,9 +31,10 @@ class Tools extends Component {
                 <LayerSelector />
               </div>
               <h3>Controls</h3>
-              <h4>
-              {this.Controls()}
-              </h4>
+              <h4>{this.Controls()}</h4>
+              <button onClick={() => history.push("/upload")}>
+                Change cover
+              </button>
             </div>
           </nav>
         </div>
@@ -56,4 +49,4 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { })(Tools);
+export default connect(mapStateToProps, {})(Tools);
