@@ -1,6 +1,7 @@
 import React from "react";
 import Layers from "./Scenes/Layers";
 import { connect } from "react-redux";
+import html2canvas from "html2canvas";
 
 class Canvas extends React.Component {
   getLayers() {
@@ -25,6 +26,22 @@ class Canvas extends React.Component {
     return diffaultPicture;
   }
 
+  saveCanvas() {
+    html2canvas(document.getElementById("capture"), {
+      allowTaint: false,
+      useCORS: true,
+    }).then((canvas) => {
+      var image = canvas
+        .toDataURL("image/png")
+        .replace("image/png", "image/octet-stream");
+
+      var a = document.createElement("a"); //Create <a>
+      a.href = image; //Image Base64 Goes here
+      a.download = "Image.png"; //File name Here
+      a.click(); //Downloaded file
+    });
+  }
+
   render() {
     let { width, height, margin } = this.props.layers[0];
     console.log(this.getCoverPhoto());
@@ -32,6 +49,7 @@ class Canvas extends React.Component {
       <main role="main" className="col-md-8 ml-sm-auto col-lg-9 px-4">
         <div
           className="Designlayer"
+          id="capture"
           style={{
             width: `${width}px`,
             height: `${height}px`,
@@ -42,6 +60,7 @@ class Canvas extends React.Component {
         >
           {this.getLayers()}
         </div>
+        <button onClick={() => this.saveCanvas()}>Download</button>
       </main>
     );
   }

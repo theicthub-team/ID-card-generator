@@ -17,7 +17,7 @@ app.post("/upload", (req, res) => {
   const file = req.files.file;
   const extension = file.name.split(".").pop();
 
-  const randomName = Math.random().toString(36).substr(2, 16).concat(extension);
+  const randomName = Math.random().toString(36).substr(2, 16).concat('.' + extension);
 
   file.mv(`${__dirname}/../reactApp/public/uploads/${randomName}`, (err) => {
     if (err) {

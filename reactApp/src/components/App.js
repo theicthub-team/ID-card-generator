@@ -23,6 +23,7 @@ export default class App extends Component {
             <Route path="/signup" component={Signup} />
             <Route path="/design" component={Design} />
             <Route path="/upload" component={FileUpload} />
+            <Route path="/pdf" component={FileUpload} />
           </Switch>
         </Router>
       </div>
