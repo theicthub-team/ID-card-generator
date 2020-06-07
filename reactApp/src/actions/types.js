@@ -10,3 +10,4 @@ export const UPDATE_LEFT = 'UPDATE_LEFT';
 export const UPDATE_SIZE = 'UPDATE_SIZE';
 export const UPDATE_WIDTH = 'UPDATE_WIDTH';
 export const UPDATE_HEIGHT = 'UPDATE_HEIGHT';
+export const CHANGE_COVER_PHOTO = 'CHANGE_COVER_PHOTO';

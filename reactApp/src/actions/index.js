@@ -10,7 +10,8 @@ import {
   UPDATE_SIZE,
   UPDATE_TOP,
   UPDATE_HEIGHT,
-  UPDATE_WIDTH
+  UPDATE_WIDTH,
+  CHANGE_COVER_PHOTO
 } from "./types";
 import idgenerator from "../api/idgenerator";
 import history from "../history";
@@ -81,4 +82,8 @@ export const updateWidth = (size) => (dispatch) => {
 };
 export const updateHeight = (size,layerid) => (dispatch) => {
   dispatch({type: UPDATE_HEIGHT, payload: size});
+};
+export const changeCoverPhoto = (name, path) => (dispatch) => {
+  dispatch({type: CHANGE_COVER_PHOTO, payload: path});
+  history.push("/design");
 };
