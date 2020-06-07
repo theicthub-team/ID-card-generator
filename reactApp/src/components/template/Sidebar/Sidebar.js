@@ -10,6 +10,7 @@ export default class Sidebar extends Component {
         <div className="row">
           <nav className="col-md-3 d-none d-md-block bg-light sidebar">
             <div className="sidebar-sticky">
+              
               <EventList />
             </div>
           </nav>
