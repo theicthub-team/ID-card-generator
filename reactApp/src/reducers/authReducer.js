@@ -6,6 +6,7 @@ import {
   SIGN_OUT,
   LOADING,
 } from "./../actions/types";
+
 import { encrypt } from "../components/Security";
 
 const INITIAL_STATE = {
