@@ -6,7 +6,7 @@ import {
   SIGN_OUT,
   LOADING,
 } from "./../actions/types";
-import { encrypt, decrypt } from "../components/Security";
+import { encrypt } from "../components/Security";
 
 const INITIAL_STATE = {
   isSignedIn: false,
