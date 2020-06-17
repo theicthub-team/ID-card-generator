@@ -7,6 +7,8 @@ import {
   LOADING,
 } from "./../actions/types";
 
+import { encrypt } from "../components/Security";
+
 const INITIAL_STATE = {
   isSignedIn: false,
   token: null,
@@ -21,7 +23,7 @@ export default (state = INITIAL_STATE, action) => {
       return {
         ...state,
         isSignedIn: true,
-        token: action.payload.token,
+        token: encrypt(action.payload.token),
         loading: false,
       };
 
