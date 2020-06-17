@@ -4,111 +4,103 @@ import { Link } from "react-router-dom";
 
 const MainContainer = () => {
   return (
-    <main role="main" className="col-md-8 ml-sm-auto col-lg-9 px-4">
-      <div id="myCarousel" className="carousel slide" data-ride="carousel">
-        <ol className="carousel-indicators">
-          <li
-            data-target="#myCarousel"
-            data-slide-to="0"
-            className="active"
-          ></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img
-              className="first-slide"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-              alt="First slide"
-            />
-            <div className="container">
-              <div className="carousel-caption text-left">
-                <h1>Example headline.</h1>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                  Donec id elit non mi porta gravida at eget metus. Nullam id
-                  dolor id nibh ultricies vehicula ut id elit.
-                </p>
+    <div className="container projectpage-container">
+      <div>
+        <h1>Create a new Project</h1>
+        <div className="row col-sm-12 pt-4">
+          <div className="col-sm-4">
+            <div className="media">
+              <img
+                alt=""
+                src="https://img.icons8.com/color/50/000000/workflow.png"
+              />
+              <div className="media-body pl-3">
+                <h5 className="mt-0">Title</h5>
+                <p>Create project here to engage your audiences.</p>
+                <input
+                  className="form-control border border-dark"
+                  type="text"
+                />
               </div>
             </div>
           </div>
-          <div className="carousel-item">
-            <img
-              className="second-slide"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-              alt="Second slide"
-            />
-            <div className="container">
-              <div className="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                  Donec id elit non mi porta gravida at eget metus. Nullam id
-                  dolor id nibh ultricies vehicula ut id elit.
-                </p>
+          <div className="col-sm-4">
+            <div className="media">
+              <img
+                alt=""
+                src="https://img.icons8.com/color/50/000000/workflow.png"
+              />
+              <div className="media-body pl-3">
+                <h5 className="mt-0">Event Images</h5>
+                <p>Create project here to engage your audiences.</p>
+                <div className="file-field">
+                  <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                      <input type="file" />
+                    </div>
+                  </div>
+                  <div className="input-group mb-3">
+                    <div className="input-group-prepend">
+                      <input type="file" />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="carousel-item">
-            <img
-              className="third-slide"
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw=="
-              alt="Third slide"
-            />
-            <div className="container">
-              <div className="carousel-caption text-right">
-                <h1>One more for good measure.</h1>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                  Donec id elit non mi porta gravida at eget metus. Nullam id
-                  dolor id nibh ultricies vehicula ut id elit.
-                </p>
+          <div className="col-sm-4">
+            <div className="media">
+              <img
+                alt=""
+                src="https://img.icons8.com/color/50/000000/workflow.png"
+              />
+              <div className="media-body pl-3">
+                <h5 className="mt-0">Details</h5>
+                <p>Create project here to engage your audiences.</p>
+                <div className="input-group mb-3">
+                  <div className="input-group-prepend">
+                    <input
+                      className="form-control border border-dark"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div className="input-group mb-3">
+                  <div className="input-group-prepend">
+                    <input
+                      className="form-control border border-dark"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div className="input-group mb-3">
+                  <div className="input-group-prepend">
+                    <input
+                      className="form-control border border-dark"
+                      type="text"
+                    />
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <a
-          className="carousel-control-prev"
-          href="#myCarousel"
-          role="button"
-          data-slide="prev"
-        >
-          <span
-            className="carousel-control-prev-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="sr-only">Previous</span>
-        </a>
-        <a
-          className="carousel-control-next"
-          href="#myCarousel"
-          role="button"
-          data-slide="next"
-        >
-          <span
-            className="carousel-control-next-icon"
-            aria-hidden="true"
-          ></span>
-          <span className="sr-only">Next</span>
-        </a>
+        <br />
+        <br />
+        <br />
+        <p className="text-center">
+          <Link
+            to="/create"
+            className="btn btn-primary btn-md"
+            href="#"
+            role="button"
+            style={{ borderRadius: "0", width: "13%", fontWeight: "bold" }}
+          >
+            Save
+          </Link>
+        </p>
       </div>
-      <div className="container projectpage-container">
-        <div className="text-center">
-          <h1>Create a new Project</h1>
-          <p>
-            Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec
-            id elit non mi porta gravida at eget metus. Nullam id dolor id nibh
-            ultricies vehicula ut id elit.
-          </p>
-          <p>
-            <Link to="/create" className="btn btn-lg btn-transparent" href="#" role="button">
-              Add Event
-            </Link>
-          </p>
-        </div>
-      </div>
-    </main>
+    </div>
   );
 };
 
