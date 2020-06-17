@@ -3,12 +3,12 @@ import { Router, Route, Switch } from "react-router-dom";
 
 import Homepage from "./Homepage/Homepage";
 import Mainpage from "./Main/Mainpage";
-import CreateEvent from "./CreateEvent/CreateEvent";
 import Login from "./LoginSignup/Login";
 import Signup from "./LoginSignup/Signup";
 import history from "../history";
 import Design from "./Design/Design";
 import FileUpload from "./ImageBrowser/FileUpload";
+import CreateEvent from "./Events/CreateEvent/CreateEvent";
 
 export default class App extends Component {
   render() {
@@ -18,7 +18,7 @@ export default class App extends Component {
           <Switch>
             <Route path="/" exact component={Homepage} />
             <Route path="/mainpage" component={Mainpage} />
-            <Route path="/create" component={CreateEvent} />
+            <Route path="/event/create" component={CreateEvent} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/design" component={Design} />

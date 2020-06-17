@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import CreateEventContainer from "./../CreateEvent/CreateEventContainer";
-import Sidebar from "./../template/Sidebar/Sidebar";
+import CreateEventContainer from "./CreateEventContainer";
+import Sidebar from "../../template/Sidebar/Sidebar";
 import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
