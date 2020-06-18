@@ -18,10 +18,11 @@ export default class App extends Component {
           <Switch>
             <Route path="/" exact component={Homepage} />
             <Route path="/mainpage" component={Mainpage} />
+            <Route path="/design" component={Mainpage} />
             <Route path="/create" component={CreateEvent} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/design" component={Design} />
+            <Route path="/designtool" component={Design} />
             <Route path="/upload" component={FileUpload} />
             <Route path="/pdf" component={FileUpload} />
           </Switch>

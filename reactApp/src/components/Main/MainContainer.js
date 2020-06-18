@@ -1,5 +1,6 @@
 import React from "react";
 import "./MainContainer.css";
+import images from "../Image";
 import { Link } from "react-router-dom";
 
 const MainContainer = () => {
@@ -24,12 +25,7 @@ const MainContainer = () => {
             />
             <div className="container">
               <div className="carousel-caption text-left">
-                <h1>Example headline.</h1>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                  Donec id elit non mi porta gravida at eget metus. Nullam id
-                  dolor id nibh ultricies vehicula ut id elit.
-                </p>
+                
               </div>
             </div>
           </div>
@@ -41,12 +37,7 @@ const MainContainer = () => {
             />
             <div className="container">
               <div className="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>
-                  Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-                  Donec id elit non mi porta gravida at eget metus. Nullam id
-                  dolor id nibh ultricies vehicula ut id elit.
-                </p>
+                
               </div>
             </div>
           </div>
@@ -107,6 +98,46 @@ const MainContainer = () => {
             </Link>
           </p>
         </div>
+      </div>
+      <hr/>
+      <div className="row mainpage">
+        <div className="card">
+          <img src={images.reactlogo} className="card-img-top" alt="..."></img>
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+          </div>
+        </div>
+        <div className="card">
+          <img src={images.reactlogo} className="card-img-top" alt="..."></img>
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+          </div>
+        </div>
+        <div className="card">
+          <img src={images.reactlogo} className="card-img-top" alt="..."></img>
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+          </div>
+        </div>
+        <div className="card">
+          <img src={images.reactlogo} className="card-img-top" alt="..."></img>
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+          </div>
+        </div>
+        <div className="card">
+          <img src={images.reactlogo} className="card-img-top" alt="..."></img>
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+          </div>
+        </div>
+        <div className="card">
+          <img src={images.reactlogo} className="card-img-top" alt="..."></img>
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+          </div>
+        </div>
+        
       </div>
     </main>
   );

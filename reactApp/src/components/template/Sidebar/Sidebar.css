@@ -100,3 +100,52 @@ body {
 [role="main"] {
   padding-top: 0px;
 }
+.sidebar-menu{
+  font-size: large;
+}
+.sidebar-menu >ul > li {
+  color: #212121;
+  line-height: 2;
+  list-style-type: square;
+}
+.sidebar-menu >ul > li > a {
+  color: #212121;
+ 
+}
+.sidebar-menu > .btn-transparent {
+  border: 1px solid lightblue;
+  margin-left: 1rem;
+  padding: 0.5rem 4rem;
+  margin-bottom: 1rem;
+  background: #64DCFC;
+  color: black;
+}
+.carousel-item {
+  height: 17rem;
+}
+.mainpage .card{
+  margin: .5rem;
+  padding: 0.4rem;
+}
+.projectpage-container {
+  padding: 1rem 14rem;
+}
+.card > img{
+  width: 40px;
+  margin: auto;
+}
+.slide {
+  margin: 0rem 0rem;
+}
+.mainpage .card {
+  flex: 15%;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+  .projectpage-container {
+    padding: 1rem 1rem;
+}
+.mainpage .card {
+  flex: 30%;
+}
+}

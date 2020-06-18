@@ -5,6 +5,7 @@ import group119 from "./../assets/images/Group 119.png";
 import group128 from "./../assets/images/Group 128.png";
 import group228 from "./../assets/images/Group 228.png";
 import group266 from "./../assets/images/Group 266.png";
+import reactlogo from "./../assets/images/logo192.png";
 
 const images = {
   map: map,
@@ -13,7 +14,8 @@ const images = {
   group119: group119,
   group128: group128,
   group228: group228,
-  group266: group266
+  group266: group266,
+  reactlogo: reactlogo
 };
 
 export default images;
