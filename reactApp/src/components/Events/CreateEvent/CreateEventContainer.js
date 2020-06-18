@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 
 const CreateEventContainer = () => {
   return (
-    <div className="container projectpage-container">
-      <div>
+    <main role="main" className="col-md-10 ml-sm-auto col-lg-9 px-4">
+      <div className="container projectpage-container">
         <h1>Create a new Project</h1>
+        </div>
         <div className="row col-sm-12 pt-4">
           <div className="col-sm-4">
             <div className="media">
@@ -98,8 +99,8 @@ const CreateEventContainer = () => {
             Save
           </Link>
         </p>
-      </div>
-    </div>
+
+    </main>
   );
 };
 

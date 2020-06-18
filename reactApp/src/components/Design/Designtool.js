@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import "./design.css";
-import Sidebar from "./../template/Sidebar/Sidebar";
+import Tools from './Tools/Tools';
 import Canvas from './Canvas';
 
 class Mainpage extends Component {
   render() {
     return (
       <div>
-        <Sidebar />
+        <Tools />
         <Canvas />
       </div>
     );

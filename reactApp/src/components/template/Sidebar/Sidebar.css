@@ -115,10 +115,10 @@ body {
 .sidebar-menu > .btn-transparent {
   border: 1px solid lightblue;
   margin-left: 1rem;
-  padding: 0.5rem 4rem;
   margin-bottom: 1rem;
   background: #64DCFC;
   color: black;
+  width: 90%;
 }
 .carousel-item {
   height: 17rem;
@@ -148,7 +148,15 @@ body {
 .mainpage .card {
   flex: 30%;
 }
-
+}
 .event-div{
-  margin-top: 30%;
+  margin-top: 7%;
+}
+.sidebar_menu_text{
+  padding: 0 20%;
+}
+.dropdown-menu{
+  width: 90%;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }

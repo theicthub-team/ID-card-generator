@@ -6,6 +6,7 @@ import Mainpage from "./Main/Mainpage";
 import Login from "./LoginSignup/Login";
 import Signup from "./LoginSignup/Signup";
 import history from "../history";
+import Designtool from "./Design/Designtool";
 import Design from "./Design/Design";
 import FileUpload from "./ImageBrowser/FileUpload";
 import CreateEvent from "./Events/CreateEvent/CreateEvent";
@@ -21,7 +22,8 @@ export default class App extends Component {
             <Route path="/event/create" component={CreateEvent} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
-            <Route path="/designtool" component={Design} />
+            <Route path="/designtool" component={Designtool} />
+            <Route path="/design" component={Design} />
             <Route path="/upload" component={FileUpload} />
             <Route path="/pdf" component={FileUpload} />
           </Switch>
