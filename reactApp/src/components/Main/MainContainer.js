@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const MainContainer = () => {
   return (
-    <main role="main" className="col-md-8 ml-sm-auto col-lg-9 px-4">
+    <main role="main" className="col-md-10 ml-sm-auto col-lg-9 px-4">
       <div id="myCarousel" className="carousel slide" data-ride="carousel">
         <ol className="carousel-indicators">
           <li
