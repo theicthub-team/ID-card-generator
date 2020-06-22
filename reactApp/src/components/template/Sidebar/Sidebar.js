@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./Sidebar.css";
 // import Sideitem from "./Sideitem";
 import EventList from "./../../Events/EventList";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 export default class Sidebar extends Component {
   render() {

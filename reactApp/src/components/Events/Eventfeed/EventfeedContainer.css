@@ -1,0 +1,127 @@
+.feed-cover {
+  text-align: center;
+  background-color: #d3d3d3;
+  padding: 2rem 3rem;
+  margin-left: 25%;
+}
+.feed-cover p {
+  font-size: small;
+}
+
+#feed-wrapper {
+  padding-left: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#feed-sidebar-wrapper {
+  z-index: -1;
+  width: 16%;
+  height: 130%;
+  margin-left: 84%;
+  overflow-y: auto;
+  background: #707070;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  text-align: center;
+  margin-top: -30%;
+  position: fixed;
+}
+
+#feed-sidebar-wrapper button {
+  border-radius: 0 !important;
+  width: 60%;
+  height: 4%;
+  margin-top: 135%;
+  font-weight: normal;
+  font-size: large;
+  padding-bottom: 10%;
+}
+
+#feed-sidebar-wrapper p {
+  color: whitesmoke;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 4%;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  position: absolute;
+}
+
+.column {
+  float: left;
+  width: 6%;
+  padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+  opacity: 0.8;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* The expanding image container */
+.container {
+  position: relative;
+  display: none;
+  padding-left: 1%;
+}
+
+#expandedImg {
+  width: 44%;
+  padding-left: 27.5%;
+  margin-top: 3%;
+}
+
+#image-gallery {
+  margin-left: 27%;
+}
+
+.event-card {
+  margin-top: -15%;
+  padding: 0px;
+  border-style: none !important;
+}
+
+.event-body {
+  padding: inherit;
+  padding-left: 15%;
+}
+
+.card-body p {
+  padding-left: 0%;
+}
+
+.social {
+  padding-left: 10%;
+  margin-top: -11%;
+}
+
+hr {
+  margin-right: 17%;
+  margin-left: 26%;
+}
+
+.explore-events{
+  padding-left: 27%;
+}
+
+.ui.cards>.card {
+  margin-left: 3%;
+}
