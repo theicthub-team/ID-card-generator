@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CreateEventContainer from "./CreateEventContainer";
 import Sidebar from "../../template/Sidebar/Sidebar";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 class CreateEvent extends Component {

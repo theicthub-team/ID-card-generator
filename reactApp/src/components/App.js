@@ -10,6 +10,7 @@ import Designtool from "./Design/Designtool";
 import Design from "./Design/Design";
 import FileUpload from "./ImageBrowser/FileUpload";
 import CreateEvent from "./Events/CreateEvent/CreateEvent";
+import Eventfeed from "./Events/Eventfeed/Eventfeed";
 
 export default class App extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class App extends Component {
             <Route path="/" exact component={Homepage} />
             <Route path="/mainpage" component={Mainpage} />
             <Route path="/event/create" component={CreateEvent} />
+            <Route path="/event/feed" component={Eventfeed} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/designtool" component={Designtool} />
