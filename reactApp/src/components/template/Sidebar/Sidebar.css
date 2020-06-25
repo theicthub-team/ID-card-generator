@@ -15,7 +15,6 @@ body {
 .sidebar {
   position: fixed;
   top: 0;
-  bottom: 0;
   left: 0;
   z-index: 100; /* Behind the navbar */
   /* padding: 48px 0 0; Height of navbar */
@@ -130,17 +129,11 @@ body {
 .projectpage-container {
   padding: 1rem 14rem;
 }
-.card > img{
-  width: 40px;
-  margin: auto;
-}
+
 .slide {
   margin: 0rem 0rem;
 }
-.mainpage .card {
-  flex: 15%;
-  text-align: center;
-}
+
 @media only screen and (max-width: 600px) {
   .projectpage-container {
     padding: 1rem 1rem;

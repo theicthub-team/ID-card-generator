@@ -89,3 +89,21 @@
   border: 1px solid lightblue;
 }
 
+.card > img{
+  width: 40px;
+  margin: auto;
+}
+.mainpage .card {
+  width: 20%;
+  text-align: center;
+}
+.designmainpage .card{
+  width: 30%;
+  margin: 5px;
+  text-align: center;
+  min-height: 300px;
+}
+.designmainpage .card > img{
+  width: 70px;
+  margin: auto;
+}
