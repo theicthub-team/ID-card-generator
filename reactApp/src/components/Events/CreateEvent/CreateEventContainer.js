@@ -18,7 +18,11 @@ const CreateEventContainer = () => {
             <div className="media-body pl-3">
               <h5 className="mt-0">Title</h5>
               <p>Create project here to engage your audiences.</p>
-              <input className="form-control border border-dark" type="text" />
+              <input
+                className="form-control border border-dark"
+                type="text"
+                placeholder="Enter title"
+              />
             </div>
           </div>
         </div>
@@ -59,7 +63,7 @@ const CreateEventContainer = () => {
                 <div className="input-group-prepend">
                   <input
                     className="form-control border border-dark"
-                    type="text"
+                    type="date"
                   />
                 </div>
               </div>
@@ -68,6 +72,7 @@ const CreateEventContainer = () => {
                   <input
                     className="form-control border border-dark"
                     type="text"
+                    placeholder="Place"
                   />
                 </div>
               </div>
@@ -76,6 +81,7 @@ const CreateEventContainer = () => {
                   <input
                     className="form-control border border-dark"
                     type="text"
+                    placeholder="Venue"
                   />
                 </div>
               </div>
