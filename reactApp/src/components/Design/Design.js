@@ -4,7 +4,8 @@ import "./design.css";
 import Sidebar from "./../template/Sidebar/Sidebar";
 import Designtemplates from "./Designtemplates";
 //import Canvas from './Canvas';
-// import Designmainpage from "./Desingmainpage";
+import Designmainpage from "./Desingmainpage";
+import Formbinding from "./Formbinding";
 
 class Mainpage extends Component {
   componentDidMount(){
@@ -20,7 +21,8 @@ class Mainpage extends Component {
         <Sidebar />
         {/*<Canvas />*/}
         {/* <Designmainpage /> */}
-        <Designtemplates />
+        {/* <Designtemplates /> */}
+        <Formbinding />
       </div>
     );
   }

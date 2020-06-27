@@ -153,3 +153,25 @@ body {
   padding-top: 0px;
   padding-bottom: 0px;
 }
+.d-mobile {
+  display: none!important;
+}
+@media only screen and (max-width: 600px) {
+  .d-mobile {
+    display: block!important;
+  }
+  .sidebar-sticky {
+    position: initial;
+    top: 0;
+    height: auto;
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.dropdown-menu{
+  top:50px!important;
+}
+[role="main"] {
+  padding-top: 54px;
+}
+}

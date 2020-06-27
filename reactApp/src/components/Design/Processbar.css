@@ -144,5 +144,9 @@
     }
     .process-model.more-icon-preocess {
         text-align: center;
-    }
+    }    
+}
+.design-fields{
+    width: 100%;
+    margin-bottom: 5px;
 }
