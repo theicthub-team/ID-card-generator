@@ -1,9 +1,9 @@
 import React from "react";
-import "./MainContainer.css";
+import "./DashboardContainer.css";
 import images from "../Image";
 import { Link } from "react-router-dom";
 
-const MainContainer = () => {
+const DashboardContainer = () => {
   return (
     <main role="main" className="col-md-10 ml-sm-auto col-lg-9 px-4">
       <div id="myCarousel" className="carousel slide" data-ride="carousel">
@@ -24,9 +24,7 @@ const MainContainer = () => {
               alt="First slide"
             />
             <div className="container">
-              <div className="carousel-caption text-left">
-                
-              </div>
+              <div className="carousel-caption text-left"></div>
             </div>
           </div>
           <div className="carousel-item">
@@ -36,9 +34,7 @@ const MainContainer = () => {
               alt="Second slide"
             />
             <div className="container">
-              <div className="carousel-caption">
-                
-              </div>
+              <div className="carousel-caption"></div>
             </div>
           </div>
           <div className="carousel-item">
@@ -93,13 +89,18 @@ const MainContainer = () => {
             ultricies vehicula ut id elit.
           </p>
           <p>
-            <Link to="/create" className="btn btn-lg btn-transparent" href="#" role="button">
+            <Link
+              to="event/create"
+              className="btn btn-lg btn-transparent"
+              href="#"
+              role="button"
+            >
               Add Event
             </Link>
           </p>
         </div>
       </div>
-      <hr/>
+      <hr />
       <div className="row mainpage">
         <div className="card">
           <img src={images.reactlogo} className="card-img-top" alt="..."></img>
@@ -137,10 +138,9 @@ const MainContainer = () => {
             <h5 className="card-title">Card title</h5>
           </div>
         </div>
-        
       </div>
     </main>
   );
 };
 
-export default MainContainer;
+export default DashboardContainer;
