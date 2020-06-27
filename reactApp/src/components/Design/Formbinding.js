@@ -26,15 +26,15 @@ const MainContainer = () => {
                     <Processbar />
                     <br/>
                     <div className="row">
-                        <div className="col-2">
+                        <div className="col-md-2 ml-sm-auto col-lg-2">
 
                         </div>
-                        <div className="col-8">
+                        <div className="col-md-8 ml-sm-auto col-lg-8">
                             <div className="row">
-                                <div className="col-7" style={{'border': '1px solid black'}}>
+                                <div className="col-md-7 ml-sm-auto col-lg-7" style={{'border': '1px solid black'}}>
                                     <img src={images.reactlogo} className="card-img-top" alt="..." />
                                 </div>
-                                <div className="col-5">
+                                <div className="col-md-5 ml-sm-auto col-lg-5">
                                 <button className="btn btn-lg btn-transparent" style={{'float': 'right'}}> import </button>
                                     <h4>Form Tool</h4>
                                     <p>Project image dawd adwd daww dwwad dwd fefs fsefa adwfe</p>
@@ -48,7 +48,7 @@ const MainContainer = () => {
                                 
                             </div>
                         </div>
-                        <div className="col-2">
+                        <div className="col-md-2 ml-sm-auto col-lg-2">
                           
                         </div>
                     </div>
