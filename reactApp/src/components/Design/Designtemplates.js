@@ -1,5 +1,5 @@
 import React from "react";
-import "../Main/MainContainer.css";
+import "../Dashboard/DashboardContainer.css";
 import images from "../Image";
 import { Link } from "react-router-dom";
 import "./Processbar.css";

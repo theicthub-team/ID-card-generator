@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import $ from 'jquery'; 
 import "./design.css";
 import Sidebar from "./../template/Sidebar/Sidebar";
-import Designmainpage from "./Desingmainpage"
-import Designtemplates from "./Designtemplates"
-// import Canvas from './Canvas';
+import Designtemplates from "./Designtemplates";
+//import Canvas from './Canvas';
 import Designmainpage from "./Desingmainpage";
 
 class Mainpage extends Component {
