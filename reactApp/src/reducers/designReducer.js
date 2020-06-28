@@ -44,8 +44,8 @@ const INITIAL_STATE = {
       size: 10,
     },
     "4": {
-      type: 'Text',
-      name: 'register id 2',
+      type: "Text",
+      name: "register id 2",
       top: 0,
       left: 0,
       size: 10,

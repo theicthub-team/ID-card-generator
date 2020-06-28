@@ -1,21 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
-import reduxthunk from "redux-thunk";
 
 import App from "./components/App";
-import reducers from "./reducers";
+// import reducers from "./reducers";
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-  reducers,
-  composeEnhancers(applyMiddleware(reduxthunk))
-);
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./store";
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>,
   document.querySelector("#root")
 );

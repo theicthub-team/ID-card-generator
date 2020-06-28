@@ -21,7 +21,7 @@ export default class App extends Component {
             <Route path="/" exact component={Homepage} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/event/create" component={CreateEvent} />
-            <Route path="/event/feed" component={Eventfeed} />
+            <Route path="/event/feed/:id" component={Eventfeed} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/designtool" component={Designtool} />

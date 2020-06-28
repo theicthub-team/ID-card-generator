@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { updateTop, updateLeft, updateSize, updateWidth,updateHeight } from "../../../actions";
+import { updateTop, updateLeft, updateSize, updateWidth,updateHeight } from "../../../actions/designAction";
 import { connect } from "react-redux";
 
 class canvasLayer extends Component {  

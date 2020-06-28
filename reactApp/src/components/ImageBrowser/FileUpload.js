@@ -3,7 +3,7 @@ import axios from "axios";
 import Message from "./Message";
 import Progress from "./Progress";
 import { connect } from "react-redux";
-import { changeCoverPhoto } from "../../actions";
+import { changeCoverPhoto } from "../../actions/designAction";
 
 class FileUpload extends Component {
   state = {

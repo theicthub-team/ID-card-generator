@@ -3,8 +3,15 @@ import CreateEventContainer from "./CreateEventContainer";
 import Sidebar from "../../template/Sidebar/Sidebar";
 // import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { createEvent } from "../../../actions/eventAction";
+import { connect } from "react-redux";
 
 class CreateEvent extends Component {
+  onSubmit = (eventInfo) => {
+    console.log(eventInfo);
+    // this.props.createEvent(eventInfo);
+  };
+
   render() {
     return (
       <div>
@@ -12,7 +19,7 @@ class CreateEvent extends Component {
           <title>Create Event</title>
         </Helmet>
         <Sidebar />
-        <CreateEventContainer />
+        <CreateEventContainer onSubmit={this.onSubmit} />
       </div>
     );
     // if (this.props.isLoggedIn) {
@@ -28,4 +35,4 @@ class CreateEvent extends Component {
   }
 }
 
-export default CreateEvent;
+export default connect(null, { createEvent })(CreateEvent);

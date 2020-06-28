@@ -6,3 +6,6 @@ https://www.npmjs.com/package/react-router-dom
 https://www.npmjs.com/package/reactstrap
 
 https://mdbootstrap.com/docs/react/content/images/
+
+
+https://medium.com/strands-tech-corner/how-to-validate-an-image-in-redux-form-1cef01e4ff6c
