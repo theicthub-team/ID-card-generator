@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import Navbar from "../template/Navbar";
 import LoginContent from "./LoginContent";
-import { signIn } from "../../actions";
+import { signIn } from "../../actions/authAction";
 
 class Login extends Component {
   onSubmit = (formValues) => {
