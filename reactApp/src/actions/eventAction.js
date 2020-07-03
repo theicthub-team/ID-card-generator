@@ -1,5 +1,5 @@
 import { CREATE_EVENT } from "./types";
-import idgenerator from "../api/idgenerator";
+// import idgenerator from "../api/idgenerator";
 
 export const createEvent = (eventInfo) => (dispatch) => {
   console.log(eventInfo);

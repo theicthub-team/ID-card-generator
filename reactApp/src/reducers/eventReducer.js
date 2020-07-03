@@ -1,5 +1,4 @@
 import { CREATE_EVENT } from "./../actions/types";
-import { decrypt } from "../components/Security";
 
 const INITIAL_STATE = {
   token: null,
