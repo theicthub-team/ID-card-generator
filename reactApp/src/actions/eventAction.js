@@ -1,4 +1,4 @@
-import { CREATE_EVENT } from "./types";
+import { CREATE_EVENT, UPLOAD_EVENT_IMAGE } from "./types";
 // import idgenerator from "../api/idgenerator";
 
 export const createEvent = (eventInfo) => (dispatch) => {
@@ -23,4 +23,8 @@ export const createEvent = (eventInfo) => (dispatch) => {
   //       dispatch({ type: SIGN_IN_FAIL, payload: errorMsg });
   //       console.clear();
   //     });
+};
+
+export const uploadEventPhoto = (name, path) => (dispatch) => {
+  dispatch({ type: UPLOAD_EVENT_IMAGE, payload: path });
 };

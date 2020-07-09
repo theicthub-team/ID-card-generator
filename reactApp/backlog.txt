@@ -9,3 +9,6 @@ https://mdbootstrap.com/docs/react/content/images/
 
 
 https://medium.com/strands-tech-corner/how-to-validate-an-image-in-redux-form-1cef01e4ff6c
+
+https://stackoverflow.com/questions/48124623/uploading-an-image -with-redux-form
+https://medium.com/@heshramsis/uploading-images-using-react-js-redux-and-store-it-using-node-js-and-mongodb-45c09c3b99a7

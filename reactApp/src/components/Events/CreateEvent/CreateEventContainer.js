@@ -2,22 +2,19 @@ import React from "react";
 import "./CreateEventContainer.css";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
+// import FormData from "form-data";
+import idgenerator from "../../../api/idgenerator";
 
 export class CreateEventContainer extends React.Component {
+  state = {
+    file: "",
+    fileName: "Choose File",
+    uploadedFile: {},
+    message: "",
+    percentage: 0,
+  };
+
   renderTextInput = (formProps) => {
-    if (formProps.type === "file") {
-      return (
-        <div className="form-group">
-          <input
-            className={formProps.className}
-            type={formProps.type}
-            accept=".jpg, .jpeg, .png"
-            placeholder={formProps.placeholder}
-            autoComplete="off"
-          />
-        </div>
-      );
-    }
     return (
       <div className="form-group">
         <input
@@ -29,6 +26,43 @@ export class CreateEventContainer extends React.Component {
         />
       </div>
     );
+  };
+
+  onChange = (e) => {
+    this.setState({ file: e.target.files[0] });
+    this.setState({ fileName: e.target.files[0].name });
+
+    const formData = new FormData();
+    formData.append("file", e.target.files[0]);
+    formData.append("remark", e.target.files[0].name);
+
+    let config = {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Content-Type": "multipart/form-data",
+        Authorization: "Token f6390ef856adb33724cf81e059b45a241087bdfd",
+      },
+    };
+    // console.log(formData);
+    idgenerator
+      .post("user/upload", formData, config)
+      .then((response) => {
+        // dispatch({ type: SIGN_IN_SUCCESS, payload: response.data });
+        // history.push("/dashboard");
+        console.log(response);
+      })
+      .catch((err) => {
+        let errorMsg = "";
+
+        try {
+          errorMsg = err.response.data.detail;
+        } catch (error) {
+          errorMsg = err.message;
+        }
+
+        // dispatch({ type: SIGN_IN_FAIL, payload: errorMsg });
+        console.log(errorMsg);
+      });
   };
 
   render() {
@@ -73,25 +107,21 @@ export class CreateEventContainer extends React.Component {
                   <div className="file-field">
                     <div className="input-group mb-3">
                       <div className="input-group-prepend">
-                        <Field
-                          name="image1"
-                          type="file"
-                          placeholder=""
+                        <input
+                          onChange={this.onChange}
                           className="border-0"
-                          component={this.renderTextInput}
-                          value={null}
+                          type="file"
+                          accept=".jpg, .jpeg, .png"
                         />
                       </div>
                     </div>
                     <div className="input-group mb-3">
                       <div className="input-group-prepend">
-                        <Field
-                          name="image2"
-                          type="file"
-                          placeholder=""
+                        <input
+                          onChange={this.onChange}
                           className="border-0"
-                          component={this.renderTextInput}
-                          value={null}
+                          type="file"
+                          accept=".jpg, .jpeg, .png"
                         />
                       </div>
                     </div>
