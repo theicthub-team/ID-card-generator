@@ -38,7 +38,6 @@ export class CreateEventContainer extends React.Component {
 
     let config = {
       headers: {
-        "Access-Control-Allow-Origin": "*",
         "Content-Type": "multipart/form-data",
         Authorization: "Token f6390ef856adb33724cf81e059b45a241087bdfd",
       },
