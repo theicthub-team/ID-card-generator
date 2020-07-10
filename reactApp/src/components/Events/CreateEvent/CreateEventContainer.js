@@ -34,7 +34,7 @@ export class CreateEventContainer extends React.Component {
 
     const formData = new FormData();
     formData.append("file", e.target.files[0]);
-    formData.append("remark", e.target.files[0].name);
+    formData.append("remark", new Date().getTime().toString(36));
 
     let config = {
       headers: {
@@ -60,7 +60,7 @@ export class CreateEventContainer extends React.Component {
         }
 
         // dispatch({ type: SIGN_IN_FAIL, payload: errorMsg });
-        console.log(errorMsg);
+        console.log(err.response);
       });
   };
 
