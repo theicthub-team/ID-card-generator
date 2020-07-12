@@ -2,7 +2,6 @@ import React from "react";
 import "./CreateEventContainer.css";
 import { Field, reduxForm } from "redux-form";
 import { connect } from "react-redux";
-// import FormData from "form-data";
 import idgenerator from "../../../api/idgenerator";
 import { uploadEventPhoto } from "../../../actions/eventAction";
 import { decrypt } from "../../Security";
@@ -48,20 +47,9 @@ export class CreateEventContainer extends React.Component {
     idgenerator
       .post("user/upload", formData, config)
       .then((response) => {
-        // dispatch({ type: SIGN_IN_SUCCESS, payload: response.data });
-        // history.push("/dashboard");
         this.props.uploadEventPhoto(response.data.file_info.file);
       })
       .catch((err) => {
-        let errorMsg = "";
-
-        try {
-          errorMsg = err.response.data.detail;
-        } catch (error) {
-          errorMsg = err.message;
-        }
-
-        // dispatch({ type: SIGN_IN_FAIL, payload: errorMsg });
         console.log(err.response);
       });
   };

@@ -1,4 +1,8 @@
-import { CREATE_EVENT, UPLOAD_EVENT_IMAGE } from "./../actions/types";
+import {
+  CREATE_EVENT,
+  UPLOAD_EVENT_IMAGE,
+  GET_OWN_EVENTS,
+} from "./../actions/types";
 import _ from "lodash";
 
 const INITIAL_STATE = {
@@ -9,6 +13,7 @@ const INITIAL_STATE = {
     place: null,
     venue: null,
   },
+  event_data: null,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -31,6 +36,9 @@ export default (state = INITIAL_STATE, action) => {
       _.set(event_details, "images", images); // replacing event_details.images with image array
 
       return { ...state, event_details };
+
+    case GET_OWN_EVENTS:
+      return { ...state, event_data: action.payload };
 
     default:
       return state;
