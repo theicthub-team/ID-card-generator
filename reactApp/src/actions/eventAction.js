@@ -1,30 +1,29 @@
 import { CREATE_EVENT, UPLOAD_EVENT_IMAGE } from "./types";
-// import idgenerator from "../api/idgenerator";
+import { store } from "../store";
+import idgenerator from "../api/idgenerator";
+import { decrypt } from "../components/Security";
 
 export const createEvent = (eventInfo) => (dispatch) => {
-  console.log(eventInfo);
-  dispatch({ type: CREATE_EVENT });
+  dispatch({ type: CREATE_EVENT, payload: eventInfo });
+  const token = decrypt(store.getState().auth.token);
+  const event = store.getState().event;
 
-  //   idgenerator
-  //     .post("user/login", eventInfo)
-  //     .then((response) => {
-  //       dispatch({ type: SIGN_IN_SUCCESS, payload: response.data });
-  //       history.push("/dashboard");
-  //     })
-  //     .catch((err) => {
-  //       let errorMsg = "";
+  let config = {
+    headers: {
+      Authorization: `Token ${token}`,
+    },
+  };
 
-  //       try {
-  //         errorMsg = err.response.data.detail;
-  //       } catch (error) {
-  //         errorMsg = err.message;
-  //       }
-
-  //       dispatch({ type: SIGN_IN_FAIL, payload: errorMsg });
-  //       console.clear();
-  //     });
+  idgenerator
+    .post("user/create_event", event, config)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((err) => {
+      console.log(err.response.statusText);
+    });
 };
 
-export const uploadEventPhoto = (name, path) => (dispatch) => {
+export const uploadEventPhoto = (path) => (dispatch) => {
   dispatch({ type: UPLOAD_EVENT_IMAGE, payload: path });
 };

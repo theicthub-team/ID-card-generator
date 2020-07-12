@@ -8,8 +8,7 @@ import { connect } from "react-redux";
 
 class CreateEvent extends Component {
   onSubmit = (eventInfo) => {
-    console.log(eventInfo);
-    // this.props.createEvent(eventInfo);
+    this.props.createEvent(eventInfo);
   };
 
   render() {
