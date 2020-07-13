@@ -8,8 +8,6 @@ class EventList extends React.Component {
     this.props.getOwnEvent();
   }
 
-  events = [1];
-
   renderedEvents = () => {
     if (this.props.ownEvents) {
       return this.props.ownEvents.map((event) => {
@@ -19,7 +17,6 @@ class EventList extends React.Component {
   };
 
   render() {
-    console.log(this.props.ownEvents);
     return (
       <div className="ui relaxed divided list">
         <ul className="nav flex-column">

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const EventItem = ({ event }) => {
   return (
     <li>
-      <Link to="/">{event.event_name}</Link>
+      <Link to={`/event/feed/${event.id}`}>{event.event_name}</Link>
     </li>
   );
 };

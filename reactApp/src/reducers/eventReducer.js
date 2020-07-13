@@ -2,6 +2,7 @@ import {
   CREATE_EVENT,
   UPLOAD_EVENT_IMAGE,
   GET_OWN_EVENTS,
+  FETCH_SINGLE_EVENT,
 } from "./../actions/types";
 import _ from "lodash";
 
@@ -14,6 +15,7 @@ const INITIAL_STATE = {
     venue: null,
   },
   event_data: null,
+  fetched_single_event: null,
 };
 
 export default (state = INITIAL_STATE, action) => {
@@ -39,6 +41,9 @@ export default (state = INITIAL_STATE, action) => {
 
     case GET_OWN_EVENTS:
       return { ...state, event_data: action.payload };
+
+    case FETCH_SINGLE_EVENT:
+      return { ...state, fetched_single_event: action.payload.event_data[0] };
 
     default:
       return state;
