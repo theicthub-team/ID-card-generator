@@ -48,7 +48,7 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, event_details, event_name };
 
     case CREATE_EVENT_SUCCESS:
-      return { ...state, event_details: action.payload.event_details };
+      return { ...state, fetched_single_event: action.payload };
 
     case UPLOAD_EVENT_IMAGE:
       const images = _.concat(event_details.images, action.payload); // concating images and saving into new images array

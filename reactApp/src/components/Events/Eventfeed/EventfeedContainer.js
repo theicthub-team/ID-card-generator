@@ -46,7 +46,6 @@ class EventfeedContainer extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     if (this.props.event) {
       var { date, title, images } = this.props.event.event_details;
       date =

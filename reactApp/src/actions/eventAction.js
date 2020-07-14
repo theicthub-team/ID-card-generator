@@ -32,7 +32,7 @@ export const createEvent = (eventInfo) => (dispatch) => {
       history.push(`/event/feed/${response.data.Event.id}`);
     })
     .catch((err) => {
-      console.log(err.response.statusText);
+      console.log(err.response);
     });
 };
 
