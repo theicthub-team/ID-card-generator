@@ -46,9 +46,9 @@ class EventfeedContainer extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     if (this.props.event) {
-      const { event_name } = this.props.event;
-      var { date } = this.props.event.event_details;
+      var { date, title } = this.props.event.event_details;
       date =
         date.split("-")[2] +
         "-" +
@@ -108,7 +108,7 @@ class EventfeedContainer extends React.Component {
                 </div>
 
                 <div className="col-md-6 col-lg-6">
-                  <h1>{event_name}</h1>
+                  <h1>{title}</h1>
                   <div className="social-icons">
                     <FacebookShareButton
                       url={"theicthub.com"}

@@ -3,12 +3,13 @@ import {
   UPLOAD_EVENT_IMAGE,
   GET_OWN_EVENTS,
   FETCH_SINGLE_EVENT,
+  CREATE_EVENT_SUCCESS,
 } from "./../actions/types";
 import _ from "lodash";
 
 const INITIAL_STATE = {
-  event_name: null,
   event_details: {
+    title: null,
     images: [],
     date: null,
     place: null,
@@ -33,7 +34,14 @@ export default (state = INITIAL_STATE, action) => {
 
       return { ...state, event_details, event_name };
 
+    case CREATE_EVENT_SUCCESS:
+      return { ...state, event_details: action.payload };
+
     case UPLOAD_EVENT_IMAGE:
+      for (const [key, value] of Object.entries(action.payload)) {
+        _.set(event_details, key, value);
+      }
+
       const images = _.concat(event_details.images, action.payload); // concating images and saving into new images array
       _.set(event_details, "images", images); // replacing event_details.images with image array
 
