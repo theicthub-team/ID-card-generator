@@ -3,15 +3,21 @@ import {
   UPLOAD_EVENT_IMAGE,
   GET_OWN_EVENTS,
   FETCH_SINGLE_EVENT,
+  CREATE_EVENT_SUCCESS,
 } from "./types";
 import { store } from "../store";
 import idgenerator from "../api/idgenerator";
 import { decrypt } from "../components/Security";
+import history from "../history";
 
 export const createEvent = (eventInfo) => (dispatch) => {
   dispatch({ type: CREATE_EVENT, payload: eventInfo });
   const token = decrypt(store.getState().auth.token);
-  const event = store.getState().event;
+  const event = {
+    event_name: store.getState().event.event_details.title,
+    event_details: store.getState().event.event_details,
+  };
+  console.log(event);
 
   let config = {
     headers: {
@@ -22,7 +28,8 @@ export const createEvent = (eventInfo) => (dispatch) => {
   idgenerator
     .post("user/create_event", event, config)
     .then((response) => {
-      console.log(response);
+      dispatch({ type: CREATE_EVENT_SUCCESS, payload: response.data.Event });
+      history.push(`/event/feed/${response.data.Event.id}`);
     })
     .catch((err) => {
       console.log(err.response.statusText);
