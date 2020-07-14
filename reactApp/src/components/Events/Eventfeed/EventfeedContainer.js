@@ -48,13 +48,15 @@ class EventfeedContainer extends React.Component {
   render() {
     console.log(this.props);
     if (this.props.event) {
-      var { date, title } = this.props.event.event_details;
+      var { date, title, images } = this.props.event.event_details;
       date =
         date.split("-")[2] +
         "-" +
         date.split("-")[1] +
         "-" +
         date.split("-")[0]; //making yyyy-mm-dd to dd-mm-yyyy
+
+      const backendWeb = "https://custom-id.herokuapp.com";
 
       return (
         <main role="main" className="col-md-10 ml-sm-auto col-lg-9 px-4">
@@ -76,15 +78,12 @@ class EventfeedContainer extends React.Component {
                 <div className="col-md-6 col-lg-6 no-padding">
                   <img
                     className="event-banner"
-                    src="https://www.w3schools.com/howto/img_nature.jpg"
+                    src={`${backendWeb}${images[0]}`}
                     alt="expandedImg"
                   />
                   <div className="gallery-container">
                     <div>
-                      <img
-                        src="https://www.w3schools.com/howto/img_snow.jpg"
-                        alt="Snow"
-                      />
+                      <img src={`${backendWeb}${images[1]}`} alt="Snow" />
                     </div>
                     <div>
                       <img
