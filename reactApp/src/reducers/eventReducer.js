@@ -54,7 +54,7 @@ export default (state = INITIAL_STATE, action) => {
         date: null,
         place: null,
         venue: null,
-      };
+      }; // reseting event_detail object, or New Event Pictures will concat with Last Event Pictures
 
       return {
         ...state,
