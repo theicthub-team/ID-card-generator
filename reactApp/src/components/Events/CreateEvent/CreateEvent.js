@@ -1,38 +1,37 @@
 import React, { Component } from "react";
 import CreateEventContainer from "./CreateEventContainer";
 import Sidebar from "../../template/Sidebar/Sidebar";
-// import { Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { createEvent } from "../../../actions/eventAction";
 import { connect } from "react-redux";
 
 class CreateEvent extends Component {
   onSubmit = (eventInfo) => {
-    console.log(eventInfo);
-    // this.props.createEvent(eventInfo);
+    this.props.createEvent(eventInfo);
   };
 
   render() {
-    return (
-      <div>
-        <Helmet>
-          <title>Create Event</title>
-        </Helmet>
-        <Sidebar />
-        <CreateEventContainer onSubmit={this.onSubmit} />
-      </div>
-    );
-    // if (this.props.isLoggedIn) {
-    //   return (
-    //     <div>
-    //       <Sidebar />
-    //       <CreateEventContainer />
-    //     </div>
-    //   );
-    // } else {
-    //   return <Redirect to="/login" />;
-    // }
+    if (this.props.isSignedIn) {
+      return (
+        <div>
+          <Helmet>
+            <title>Create Event</title>
+          </Helmet>
+          <Sidebar />
+          <CreateEventContainer onSubmit={this.onSubmit} />
+        </div>
+      );
+    }
+
+    return <Redirect to="/login" />;
   }
 }
 
-export default connect(null, { createEvent })(CreateEvent);
+const mapStateToProps = (state) => {
+  return {
+    isSignedIn: state.auth.isSignedIn,
+  };
+};
+
+export default connect(mapStateToProps, { createEvent })(CreateEvent);

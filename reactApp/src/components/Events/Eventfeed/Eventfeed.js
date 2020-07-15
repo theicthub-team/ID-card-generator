@@ -4,7 +4,7 @@ import Sidebar from "../../template/Sidebar/Sidebar";
 import { Helmet } from "react-helmet";
 import EventfeedContainer from "./EventfeedContainer";
 
-class CreateEvent extends Component {
+class Eventfeed extends Component {
   render() {
     return (
       <div>
@@ -12,20 +12,10 @@ class CreateEvent extends Component {
           <title>Event feed</title>
         </Helmet>
         <Sidebar />
-        <EventfeedContainer />
+        <EventfeedContainer event_id={this.props.match.params.id} />
       </div>
     );
-    // if (this.props.isLoggedIn) {
-    //   return (
-    //     <div>
-    //       <Sidebar />
-    //       <CreateEventContainer />
-    //     </div>
-    //   );
-    // } else {
-    //   return <Redirect to="/login" />;
-    // }
   }
 }
 
-export default CreateEvent;
+export default Eventfeed;

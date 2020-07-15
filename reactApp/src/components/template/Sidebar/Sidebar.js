@@ -35,7 +35,6 @@ export default class Sidebar extends Component {
                 <EventList />
               </div>
             </div>
-
           </nav>
         </div>
       </div>
